@@ -23,8 +23,8 @@
 - **Proof of Life:** Qdrant dashboard loads at `localhost:6333/dashboard`; SciFact corpus unzipped and readable in Python.
 
 ### Day 2 (~2-3 hrs)
-- [ ] Pick embedding model (recommend `all-MiniLM-L6-v2` — free, local, fast, 384-dim)
-- [ ] Embed the full SciFact corpus, load vectors into Qdrant
+- [X] Pick embedding model (recommend `all-MiniLM-L6-v2` — free, local, fast, 384-dim)
+- [X] Embed the full SciFact corpus, load vectors into Qdrant
 - **Proof of Life:** Run `qdrant_client.count(collection_name)` → prints doc count matching corpus size.
 
 ### Day 3 (optional, if 3rd day available)
@@ -35,11 +35,14 @@
 ### 📊 Week 1 Metrics Checkpoint
 | Metric | Value |
 |---|---|
-| Corpus used | |
-| # documents indexed | |
-| Embedding model + dimension | |
-| Indexing time (total) | |
-| Vector store used | |
+| Corpus used | BEIR SciFact|
+| # documents indexed |5,183 |
+| Embedding model + dimension | all-MiniLM-L6-v2, 384 dimensions|
+| Indexing time (total) | 17 seconds|
+| Vector store used | Qdrant |
+
+Lessons Learned:
+Qdrant has a 32MB request payload limit so I had to batch using 256
 
 ---
 
