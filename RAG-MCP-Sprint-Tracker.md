@@ -17,9 +17,9 @@
 ## WEEK 1 — Foundation: Corpus + Vector Store
 
 ### Day 1 (~2-3 hrs)
-- [ ] Install Docker, pull/run Qdrant locally (`docker run -p 6333:6333 qdrant/qdrant`)
-- [ ] Install `faiss-cpu`, `beir`, `sentence-transformers`
-- [ ] Download BEIR **SciFact** dataset (~5K docs — small enough to run fast, big enough to be credible)
+- [X] Install Docker, pull/run Qdrant locally (`docker run -p 6333:6333 qdrant/qdrant`)
+- [X] Install `faiss-cpu`, `beir`, `sentence-transformers`
+- [X] Download BEIR **SciFact** dataset (~5K docs — small enough to run fast, big enough to be credible)
 - **Proof of Life:** Qdrant dashboard loads at `localhost:6333/dashboard`; SciFact corpus unzipped and readable in Python.
 
 ### Day 2 (~2-3 hrs)
