@@ -227,3 +227,6 @@ data/scifact/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Personal sprint tracker
+RAG-MCP-Sprint-Tracker.md
