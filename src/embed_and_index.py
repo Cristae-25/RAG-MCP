@@ -1,10 +1,13 @@
 import json
+import numpy as np
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 from sentence_transformers import SentenceTransformer
 
 COLLECTION_NAME = "scifact_minilm"
 CORPUS_PATH = "data/scifact/corpus.jsonl"
+EMBEDDINGS_PATH = "data/embeddings.npy"
+DOC_IDS_PATH = "data/doc_ids.json"
 UPSERT_BATCH_SIZE = 256
 
 client = QdrantClient(url="http://localhost:6333")
@@ -57,3 +60,8 @@ for start in range(0, len(points), UPSERT_BATCH_SIZE):
 
 count = client.count(collection_name=COLLECTION_NAME).count
 print(f"Done. Collection '{COLLECTION_NAME}' now has {count} vectors.")
+
+np.save(EMBEDDINGS_PATH, embeddings)
+
+with open(DOC_IDS_PATH, "w") as f:
+    json.dump([d["_id"] for d in docs], f)
